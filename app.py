@@ -19,6 +19,7 @@ st.markdown("<div id='linkto_nav0'></div>", unsafe_allow_html=True)
 st.title('Test for statistical significance tool')
 
 st.header('Follow the steps below according to what you are testing')
+st.write('  ') 
 st.write('Note: This tool is only valid when each user is in only one group.')
 st.write('__95% confidence interval__ is used during testing. This is the industry standard / best practice.')
 
@@ -70,6 +71,7 @@ if test_type == 'Two groups':
     
     st.markdown("<div id='linkto_nav3'></div>", unsafe_allow_html=True)
     st.subheader('(3) Enter the number of successes and total number for each group you are testing')
+    st.write('  ') 
     
     i_s1, i_n1 = st.beta_columns(2)
     with i_s1:
@@ -85,6 +87,7 @@ if test_type == 'Two groups':
 
     st.markdown("<div id='linkto_nav4'></div>", unsafe_allow_html=True)
     st.subheader('(4) Click "Calculate" to test if the difference between groups is statistically significant')
+    st.write('  ') 
 
     if st.button("Calculate"): 
         if num_check(s1)==True and denom_check(n1)==True and num_check(s2)==True and denom_check(n2)==True and success_sample(s1,n1)==True and success_sample(s2,n2)==True:
@@ -110,6 +113,7 @@ elif test_type == 'More than two groups':
     
     st.markdown("<div id='linkto_nav3'></div>", unsafe_allow_html=True)
     st.subheader('(3) For each group, enter the number of successes and total number. You may also edit the group name, if desired. Click "See Data" to view your input.')
+    st.write('  ') 
     
     group_counter=st.number_input('How many groups are you comparing?', min_value=0, value=3)
     
@@ -148,6 +152,7 @@ elif test_type == 'More than two groups':
         
     st.markdown("<div id='linkto_nav4'></div>", unsafe_allow_html=True)
     st.subheader('(4) Choose the control group and click "Calculate" to test if the difference between groups is statistically significant')
+    st.write('  ') 
     
     st.markdown('Select the control group for your experiment. <br /> _The control group will be compared to all variation groups while testing for significance._', unsafe_allow_html=True)
     control_lst=copy.deepcopy(g_1)
